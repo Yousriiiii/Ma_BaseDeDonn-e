@@ -1,0 +1,14 @@
+D:\Ma_BaseDeDonnée\bin\Debug\Ma_BaseDeDonnée.exe.config
+D:\Ma_BaseDeDonnée\bin\Debug\Ma_BaseDeDonnée.exe
+D:\Ma_BaseDeDonnée\bin\Debug\Ma_BaseDeDonnée.pdb
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.csproj.AssemblyReference.cache
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.csproj.SuggestedBindingRedirects.cache
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.Form1.resources
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.Properties.Resources.resources
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.csproj.GenerateResource.cache
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.csproj.CoreCompileInputs.cache
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.exe
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.pdb
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.FormForNameOfBD.resources
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.InputOfData.resources
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.InputOfNameOfList.resources
