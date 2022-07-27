@@ -10,9 +10,10 @@ namespace Ma_BaseDeDonnée
 {
     public class CreateCsv_File
     {
-        public CreateCsv_File(string csvPath, string NameOfFile)
+        public CreateCsv_File(string CompletedPath)
         {
-            File.AppendAllText(csvPath +"\\"+ NameOfFile, null); // Ici ca ajoute ET créer le fichier csv
+            File.AppendAllText(CompletedPath, null); // Ici ca ajoute ET créer le fichier csv
+                                                                          // mais on ne rajoute rien
         }
 
 

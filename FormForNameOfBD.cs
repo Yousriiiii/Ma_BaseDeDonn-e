@@ -32,11 +32,13 @@ namespace Ma_BaseDeDonnée
                 this.NameOfFolder = this.textBox1.Text;
                 CreateFolder(this.textBox1.Text); // Je crée un dossier ou il y aura toutes la BD -- selon le initialPath
 
+                var CompletedPath = this.CurrentPath + "\\" + this.NameOfFolder + ".csv";
+
             // C'est ici que je crée la base de donnée avec le nom de la base de donnée
-                CreateCsv_File csvFile = new CreateCsv_File(this.CurrentPath, NameOfFolder);
+                CreateCsv_File csvFile = new CreateCsv_File(CompletedPath);
 
             // J'ouvre la partie la plus utilisé par l'utilisateur où l'utilisateur peut entre du data
-                InputOfData form = new InputOfData(this.CurrentPath+"\\"+NameOfFolder);
+                InputOfData form = new InputOfData(CompletedPath);
                 form.Show();
             // Et je ferme cette fenêtre
                 this.Close();
@@ -56,13 +58,14 @@ namespace Ma_BaseDeDonnée
 
         }
 
-        private void CreateFolder(string NameOfBD) // => ici je crée un dossier où toutes la data est stocké
+        private void CreateFolder(string NameOfBD) // => ici je crée un dossier où toutes la data est stocké en mettant
+                                                   // en avant que c'est un fichier csv
         {
             this.CurrentPath = this.InitialPath + "\\"+NameOfBD; // on ajoute le nom du nouveau dossier
 
             if (!Directory.Exists(this.CurrentPath))
             { // S'il aucun dossier existe
-                Directory.CreateDirectory(this.CurrentPath);  // On crée un dossier
+                Directory.CreateDirectory(this.CurrentPath);  // On crée un dossier dans le dossier des bases de données
             }
 
         }
