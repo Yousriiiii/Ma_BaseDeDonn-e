@@ -22,14 +22,22 @@ namespace Ma_BaseDeDonnée
 
             foreach (string item in DataToAdd)
             {
-                if (item == DataToAdd[DataToAdd.Count-1])
+                if(item != null) // Si il y a quelque chose à ajouter on l'ajoute
                 {
-                    File.AppendAllText(Path, item ); // C'est pour la dernière valeur
+                    if (item == DataToAdd[DataToAdd.Count-1])
+                    {
+                        File.AppendAllText(Path, item ); // C'est pour la dernière valeur
+                    }
+                    else
+                    {
+                        File.AppendAllText(Path, item + ",");
+
+                    }
+
                 }
-                else
+                else // Sinon on rajoute qu'une virgule
                 {
                     File.AppendAllText(Path, item + ",");
-
                 }
             }
             File.AppendAllText(Path, "\n"); // Pour une nouvelle ligne dans le fichier

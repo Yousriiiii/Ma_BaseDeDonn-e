@@ -35,17 +35,25 @@ namespace Ma_BaseDeDonnée
 
         private void SaveData(object sender, EventArgs e)
         {
-            // Ici je vais enregister toute les info des textbox donc j'ai besoin de toutes les chaine de
-            // caractére des textbox
-            this.DataToAdd = ClassWithInformation.GetTheDataToPut();
 
-            WriteInFile write = new WriteInFile(this.pathForWritting);
+            try
+            {
+                // Ici je vais enregister toute les info des textbox donc j'ai besoin de toutes les chaine de
+                // caractére des textbox
+                this.DataToAdd = ClassWithInformation.GetTheDataToPut();
 
-            write.WriteNewData(DataToAdd); // J'appelle cette méthode pour écrire la nouvelle data
+                WriteInFile write = new WriteInFile(this.pathForWritting);
 
-            // ET dès que j'ai sauvegardé les data je clear les textbox pour une nouvelle utilisation
-            ClearAllTextBox();
+                write.WriteNewData(DataToAdd); // J'appelle cette méthode pour écrire la nouvelle data
 
+                // ET dès que j'ai sauvegardé les data je clear les textbox pour une nouvelle utilisation
+                ClearAllTextBox();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Les données ne peuvent pas être sauvegarder", "Erreur", MessageBoxButtons.OK); // Message box qui permet d'alerter qu'il faut un nom au fichier
+            }
         }
 
         private void ClearAllTextBox() // Methode qui permet de clear toute les textbox pour une nouvelle utilisation

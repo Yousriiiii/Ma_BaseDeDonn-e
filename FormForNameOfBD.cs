@@ -16,8 +16,9 @@ namespace Ma_BaseDeDonnée
         public string NameOfFolder;
         public string CurrentPath;
         public string InitialPath;
-        public FormForNameOfBD()
+        public FormForNameOfBD(string InitialPath)
         {
+            this.InitialPath = InitialPath;
             InitializeComponent();
         }
 
@@ -25,8 +26,6 @@ namespace Ma_BaseDeDonnée
                                                               // et dans ce dossier, il y aura le vrai dossier crée par l'utilisateur
                                                               // un exemple: l'utilisateur créer dossier client et dans ce dossier, il y a le fichier csv
         {
-            SetInitialPath(); // Methode permettant de connaitre le chemin du dossier ou il y aura la base de donné
-
             if(this.textBox1.Text != "")
             {
                 this.NameOfFolder = this.textBox1.Text;
@@ -50,14 +49,6 @@ namespace Ma_BaseDeDonnée
             }
 
         }
-        private void SetInitialPath() // On crée le dossier de base de la bd
-        {
-            OpenFileExplorer openFileExplorer = new OpenFileExplorer();
-
-            this.InitialPath = openFileExplorer.InitialPath;
-
-        }
-
         private void CreateFolder(string NameOfBD) // => ici je crée un dossier où toutes la data est stocké en mettant
                                                    // en avant que c'est un fichier csv
         {
