@@ -20,27 +20,29 @@ namespace Ma_BaseDeDonnée
         {
             this.DataToAdd = value;
 
-            foreach (string item in DataToAdd)
+            File.AppendAllText(Path, "\n"); // Pour une nouvelle ligne dans le fichier
+
+
+            for(int i = 0; i <= this.DataToAdd.Count - 1; i++) // J'énumére tous les string dans la liste des datatoadd
             {
-                if(item != null) // Si il y a quelque chose à ajouter on l'ajoute
+                if(this.DataToAdd[i] != null)// Si il y a quelque chose à ajouter on l'ajoute
                 {
-                    if (item == DataToAdd[DataToAdd.Count-1])
+                    if(i == DataToAdd.Count - 1) // Je vérifie si c'est le derniére data à ajouter
                     {
-                        File.AppendAllText(Path, item ); // C'est pour la dernière valeur
+                        File.AppendAllText(Path, DataToAdd[i]); // Je ne met pas de virgule si c'est le dernier
                     }
                     else
                     {
-                        File.AppendAllText(Path, item + ",");
+                        File.AppendAllText(Path, DataToAdd[i] + ",");
 
                     }
 
                 }
                 else // Sinon on rajoute qu'une virgule
                 {
-                    File.AppendAllText(Path, item + ",");
+                    File.AppendAllText(Path, ",");
                 }
             }
-            File.AppendAllText(Path, "\n"); // Pour une nouvelle ligne dans le fichier
         }
 
         public void WriteNewColumn(string NameOfNewColumn) // Cette méthode va me servir à écrire une nouvelle colonne au fichier
