@@ -11,6 +11,10 @@ namespace Ma_BaseDeDonnée
     {
         string Path;
         List<string> DataToAdd;
+        static bool Make_NewLine = true; // Cette variable me permet de dire si oui ou non je fait un /n ou pas
+                                  // si c'est true je met un /n sinon on le fait pas
+                                  // attention je le met en static pour que la variable ne change pas même si on fait une nouvelle instance
+                                  // de la classe WriteLine
         public WriteInFile(string path)
         {
             this.Path = path;
@@ -19,8 +23,14 @@ namespace Ma_BaseDeDonnée
         public void WriteNewData(List<string> value) // Methode qui sert à ajouter une ligne dans le csv
         {
             this.DataToAdd = value;
-
-            File.AppendAllText(Path, "\n"); // Pour une nouvelle ligne dans le fichier
+            if(Make_NewLine == true)
+            {
+                File.AppendAllText(Path, "\n"); // Pour une nouvelle ligne dans le fichier
+            }
+            else //sinon ca veut dire qu'il est a false donc on le remet à true 
+            {
+                Make_NewLine = true;
+            }
 
 
             for(int i = 0; i <= this.DataToAdd.Count - 1; i++) // J'énumére tous les string dans la liste des datatoadd
@@ -49,9 +59,9 @@ namespace Ma_BaseDeDonnée
         {
             // J'écrit directement les nouvelle données
             List<string> lines = File.ReadAllLines(Path).ToList(); // je lis le fichier et je le
-                                                                                                                   // transforme direct en une list
-                                                                                                                   // la condition est que line soit
-                                                                                                                   // IEnumerable
+                                                                                                 // transforme direct en une list
+                                                                                                // la condition est que line soit
+                                                                                               // IEnumerable
             if(lines.Count != 0) //Si il y a qqu chose dans le fichier
             {
                 lines[0] += ","+NameOfNewColumn; // J'ajoute la nouvelle variable
@@ -64,7 +74,10 @@ namespace Ma_BaseDeDonnée
                     lines[index] += ",";
                     index++;
                 });
-                File.WriteAllLines(Path, lines);
+                
+                File.WriteAllLines(Path, lines); // La méthode writealllines est utilisé car elle réécrit toutes les lignes du fichier
+                Make_NewLine = false; // Je le met false car en effet il ne doit plus faire /n car la méthode WriteAllLine le
+                                               // fait deja
             }
             else // Si le fichier est vide 
             {
