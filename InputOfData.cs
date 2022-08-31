@@ -51,8 +51,12 @@ namespace Ma_BaseDeDonnée
             // Et la j'ajoute en dernier le panel pour ajouter des choses à la liste
 
             CreatePanelForAddColumn PanelOfSaveAndAdd = new CreatePanelForAddColumn(this, NumberOfPanel, PanelInputData,this.CurrentPath); // Attention ce panel contient deux bouton
-                                              // un bouton pour ajouter une colonne dans le fichier csv
-                                              // et le deuxième bouton sert à sauvegarder les donné
+                                                                                                                                           // un bouton pour ajouter une colonne dans le fichier csv
+                                                                                                                                           // et le deuxième bouton sert à sauvegarder les donné
+
+            // Je crée un panel à droite pour ajouter des fonctionnalitées comme modifier les donnée,...
+
+            PanelWithMoficatorButton panelWithMoficatorButton = new PanelWithMoficatorButton(this, this.CurrentPath);
         }
     }
 }

@@ -11,17 +11,11 @@ namespace Ma_BaseDeDonnée
     {
         StreamReader reader;
         public string Path;
-        public static string FirstLine;
+
         public ReadFile(string FilePath)
         {
             this.Path = FilePath;
-            /* pour lire tout le fichier
-            while (!reader.EndOfStream)
-            {
-                var line = reader.ReadLine();
-                var value = line.Split(',');
-            }
-            */
+
         }
 
         public string[] GetFirstLine()
@@ -30,14 +24,22 @@ namespace Ma_BaseDeDonnée
             this.reader = new StreamReader(File.OpenRead(Path));
             string[] value = null; // C'est le tableau de string de la première ligne
 
-            FirstLine = reader.ReadLine(); // Ca c'est le string de la première ligne
-            if(FirstLine != null) // Je vérifie qu'il y a qqu chose à la premère ligne
+            string Header = reader.ReadLine(); // Ca c'est le string de la première ligne
+            if(Header != null) // Je vérifie qu'il y a qqu chose à la premère ligne
             {
-                value = FirstLine.Split(',');
+                value = Header.Split(',');
             }
             // Et puis je ferme le reader
             this.reader.Close();
+
             return value;
+        }
+
+        public List<string> GetAllData()
+        {
+            List<string> lines = File.ReadAllLines(Path).ToList();
+
+            return lines;
         }
     }
 }

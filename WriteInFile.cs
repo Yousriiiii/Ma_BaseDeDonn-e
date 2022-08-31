@@ -86,5 +86,37 @@ namespace Ma_BaseDeDonnée
             }
         }
 
+        public void ReWriteAllData(List<List<string>> NewData)
+        {
+            File.Delete(Path); // Je supprime le fichier
+                               // et ensuite je crée un nouveau fichier csv
+            
+            CreateCsv_File create = new CreateCsv_File(Path); // Ici je crée le fichier csv
+
+
+            NewData.ToList().ForEach(line => { 
+            
+
+                if(line != NewData[NewData.Count - 1])
+                {
+                    for(int i = 0; i < line.Count; i++)
+                    {
+                        if(i == line.Count - 1) // Cela signifie que c'est le dernier terme donc on ne met pas la virgule
+                        {
+                            File.AppendAllText(Path, line[i] + "\n");
+                        }
+                        else
+                        {
+                            File.AppendAllText(Path, line[i] + ",");
+
+                        }
+                    }
+
+                }
+                            
+            });
+
+
+         }
     }
 }

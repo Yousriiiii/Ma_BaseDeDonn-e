@@ -12,3 +12,4 @@ D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.pdb
 D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.FormForNameOfBD.resources
 D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.InputOfData.resources
 D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.InputOfNameOfList.resources
+D:\Ma_BaseDeDonnée\obj\Debug\Ma_BaseDeDonnée.DataView.resources

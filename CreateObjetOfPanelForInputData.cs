@@ -40,20 +40,22 @@ namespace Ma_BaseDeDonnée
             TextBoxInputData.Size = new Size(100, 100);
             #endregion
 
-            #region Logo
+            /* #region Logo
 
-            PictureBox pictureBox = new PictureBox();
-            pictureBox.Image = global::Ma_BaseDeDonnée.Properties.Resources.Logo_Modificateur;
-            pictureBox.InitialImage = global::Ma_BaseDeDonnée.Properties.Resources.Logo_Modificateur;
-            pictureBox.Location = new Point(1200 , 25);
-            pictureBox.Size = new Size(50,50);
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Je spécifie le mode de réglage de dimension
-                                                                   // le mode utilise (stretchimage) est un mode qui va permettre
-                                                                   // d'élargir l'image selon la taille de picturebox
-            pictureBox.BorderStyle = BorderStyle.Fixed3D;
-            #endregion
+             PictureBox pictureBox = new PictureBox();
+             pictureBox.Image = global::Ma_BaseDeDonnée.Properties.Resources.Logo_Modificateur;
+             pictureBox.InitialImage = global::Ma_BaseDeDonnée.Properties.Resources.Logo_Modificateur;
+             pictureBox.Location = new Point(1200 , 25);
+             pictureBox.Size = new Size(50,50);
+             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Je spécifie le mode de réglage de dimension
+                                                                    // le mode utilise (stretchimage) est un mode qui va permettre
+                                                                    // d'élargir l'image selon la taille de picturebox
+             pictureBox.BorderStyle = BorderStyle.Fixed3D;
+             #endregion
+             panelOfData.Controls.Add(pictureBox);
 
-            panelOfData.Controls.Add(pictureBox);
+            */
+
             panelOfData.Controls.Add(ColomnName); // C'est pour le label de chaque panel
             panelOfData.Controls.Add(TextBoxInputData);
 
