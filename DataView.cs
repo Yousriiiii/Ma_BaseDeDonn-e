@@ -35,7 +35,7 @@ namespace Ma_BaseDeDonnée
             {
             #region Initialisation du header de la datagrid
 
-            string[] Header = Data[0].Split(',');
+            string[] Header = Data[0].Split(';');
 
             foreach (string header in Header)
             {
@@ -51,7 +51,7 @@ namespace Ma_BaseDeDonnée
 
             for(int i = 1; i < Data.Count; i++)
             {
-                string [] vs = Data[i].Split(',');
+                string [] vs = Data[i].Split(';');
 
                 dt.Rows.Add(vs);
             }

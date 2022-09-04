@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CreateButtonForAddColumn.cs" />
     <Compile Include="CreateButtonForChangeData.cs" />
+    <Compile Include="CreateButtonForReserachData.cs" />
     <Compile Include="CreateButtonForSavingData.cs" />
     <Compile Include="CreateCsv_File.cs" />
     <Compile Include="CreateObjetOfPanelForInputData.cs" />
@@ -88,6 +89,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadFile.cs" />
+    <Compile Include="Research.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Research.Designer.cs">
+      <DependentUpon>Research.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResearchData.cs" />
     <Compile Include="WriteInFile.cs" />
     <EmbeddedResource Include="DataView.resx">
@@ -115,6 +122,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Research.resx">
+      <DependentUpon>Research.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\CreateButtonForAddColumn.datasource" />
     <None Include="Properties\DataSources\CreateButtonForChangeData.datasource" />
     <None Include="Properties\DataSources\CreateButtonForSavingData.datasource" />

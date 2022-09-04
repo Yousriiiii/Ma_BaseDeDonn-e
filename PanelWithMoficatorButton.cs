@@ -27,6 +27,7 @@ namespace Ma_BaseDeDonnée
             // et la j'appellle la classe pour créer le bouton {Modifier les données}
 
             CreateButtonForChangeData createButtonForChangeData = new CreateButtonForChangeData(panel , this.path);
+            CreateButtonForReserachData createButtonForReserachData = new CreateButtonForReserachData(panel , this.path);
         }
     }
 }

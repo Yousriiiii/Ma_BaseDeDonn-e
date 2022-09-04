@@ -17,8 +17,8 @@ namespace Ma_BaseDeDonnée
             #region création du bouton
             Button btn = new Button();
             btn.Text = "Modifier les données";
-            btn.Location = new Point(50, 25);
-            btn.Size = new Size(100, 50);
+            btn.Location = new Point(27, 25);
+            btn.Size = new Size(140, 50);
             btn.Click += new EventHandler(OpenDataWindow);
             #endregion
 

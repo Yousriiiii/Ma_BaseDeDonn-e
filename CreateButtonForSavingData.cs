@@ -52,6 +52,7 @@ namespace Ma_BaseDeDonnée
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 MessageBox.Show("Les données ne peuvent pas être sauvegarder", "Erreur", MessageBoxButtons.OK); // Message box qui permet d'alerter qu'il faut un nom au fichier
             }
         }

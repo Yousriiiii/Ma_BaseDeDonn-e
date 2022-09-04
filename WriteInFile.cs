@@ -43,14 +43,14 @@ namespace Ma_BaseDeDonnée
                     }
                     else
                     {
-                        File.AppendAllText(Path, DataToAdd[i] + ",");
+                        File.AppendAllText(Path, DataToAdd[i] + ";");
 
                     }
 
                 }
                 else // Sinon on rajoute qu'une virgule
                 {
-                    File.AppendAllText(Path, ",");
+                    File.AppendAllText(Path, ";");
                 }
             }
         }
@@ -64,14 +64,14 @@ namespace Ma_BaseDeDonnée
                                                                                                // IEnumerable
             if(lines.Count != 0) //Si il y a qqu chose dans le fichier
             {
-                lines[0] += ","+NameOfNewColumn; // J'ajoute la nouvelle variable
+                lines[0] += ";"+NameOfNewColumn; // J'ajoute la nouvelle variable
                 int index = 1; 
 
                 lines.Skip(1).ToList().ForEach(line => // => est une expression réduite appelé l'expression lambda
                                                        // cela me permet de créer une méthode anonyme qui va ajouter une
                                                        // virgule à chaque ligne du fichier
                 { // La mêthode skip me permet de outre passer le premier index car je ne dois pas mettre une virgule
-                    lines[index] += ",";
+                    lines[index] += ";";
                     index++;
                 });
                 
@@ -107,7 +107,7 @@ namespace Ma_BaseDeDonnée
                         }
                         else
                         {
-                            File.AppendAllText(Path, line[i] + ",");
+                            File.AppendAllText(Path, line[i] + ";");
 
                         }
                     }
