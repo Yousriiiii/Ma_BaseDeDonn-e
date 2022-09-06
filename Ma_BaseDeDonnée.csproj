@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboBoxJob.cs" />
     <Compile Include="CreateButtonForAddColumn.cs" />
     <Compile Include="CreateButtonForChangeData.cs" />
     <Compile Include="CreateButtonForReserachData.cs" />

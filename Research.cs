@@ -13,6 +13,9 @@ namespace Ma_BaseDeDonnée
     public partial class Research : Form
     {
         public string path;
+
+        public DataTable dt = new DataTable();
+
         public Research(string path)
         {
             InitializeComponent();
@@ -21,17 +24,13 @@ namespace Ma_BaseDeDonnée
 
         private void Research_Load(object sender, EventArgs e)
         {
-            // ICI je met les info dans la combobox
-            ReadFile read = new ReadFile(this.path);
-            string [] firstLine = read.GetFirstLine();
-
-            foreach(string line in firstLine)
-            {
-                this.ComboBox1.Items.Add(line);
-            }
-            this.ComboBox1.SelectedIndex = 0; // J'initialise l'index à 0
-
-            this.label1.Text = this.ComboBox1.Text + " :"; // Je change le label 
+            // Je met en évidence les widget initialement utilisé
+            ComboBoxJob Job = new ComboBoxJob(this.panel1,this.path);
+            Job.ComboBoxAdded(this.ComboBox1);
+            Job.LabelAdded(this.label1);
+            Job.TextBoxAdded(this.textBox1);
+        
+        
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -41,7 +40,7 @@ namespace Ma_BaseDeDonnée
 
             DataTable dt = new DataTable();
 
-            dt.Columns.Add(research.header);
+             dt.Columns.Add(research.header);
 
             for (int i = 0; i < listOfResult.Count; i++)
             {
@@ -56,6 +55,12 @@ namespace Ma_BaseDeDonnée
         {
             // A chaque fois que l'index change, je change le label
             this.label1.Text = this.ComboBox1.Text + " :"; // Je change le label 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ComboBoxJob Job = new ComboBoxJob(this.panel1, this.path);
+            Job.NewResearchInterface();
         }
     }
 }

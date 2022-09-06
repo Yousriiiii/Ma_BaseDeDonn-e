@@ -37,9 +37,16 @@ namespace Ma_BaseDeDonnée
 
             string[] Header = Data[0].Split(';');
 
+                int index = 1; // Il va être utile si il y a conflit des données
             foreach (string header in Header)
             {
-                dt.Columns.Add(header);
+                try {
+                        dt.Columns.Add(header);
+                    }
+                    catch (Exception ex) {
+                        dt.Columns.Add(header + index.ToString());
+                        index += 1;
+                    }
 
             }
             
